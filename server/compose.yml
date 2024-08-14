@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    ports:
+      - ${ELTZ_DATABASE_PORT:-5432}:5432
+    environment:
+      POSTGRES_USER: ${ELTZ_DATABASE_USER}
+      POSTGRES_PASSWORD: ${ELTZ_DATABASE_PASSWORD}
+      POSTGRES_DB: ${ELTZ_DATABASE_NAME}
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  pgadming:
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    volumes:
+      - pgadming:/var/lib/pgadmin
+
+volumes:
+  db:
+  # The driver could be a S3 service for instance
+    driver: local
+  pgadming:
+    driver: local
