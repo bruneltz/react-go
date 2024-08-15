@@ -1,7 +1,29 @@
-# react-go
+# AMA (Ask Me Anything)
 
-Commands performed:
+> Class course promoted by [Rocketseat](https://www.rocketseat.com.br/) school.
 
+---
+
+The AMA application allows creating a room to be shared in which others can submit answers and upvote them.
+
+[Demo]
+
+To run locally, follow these commands:
+
+1. Clone this project
+
+Start the server:
+1. Inside the server directory, run `docker compose start`
+2. Inside the server directory, run `go run ./cmd/wsrs/main.go`
+3. Open http://localhost:8081/ to access the pgAdmin
+
+Start the web:
+1. Inside the web directory, run `npm run dev`
+2. Open http://localhost:5173/
+
+## Other command performed while coding the app
+
+### Server
 1. go mod init github.com/bruneltz/react-go 
 2. After finishing configuring the compose.yml: docker compose up
 3. Handle migrations: go install github.com/jackc/tern/v2@latest
@@ -16,38 +38,12 @@ Commands performed:
 12. Run every command with the directive "generate": go generate ./...
 13. go get github.com/go-chi/cors
 
-## Web
-
+### Web
 1. npm create vite@latest
 2. npm i 
 3. npm i react-router-dom
-
-```
-
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { CreateRoom } from './pages/create-room'
-import { Room } from './pages/room'
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <CreateRoom></CreateRoom>
-  },
-  {
-    path: '/room/:roomId',
-    element: <Room></Room>
-  }
-])
-
-export function App() {
-  return <RouterProvider router={router}></RouterProvider>
-}
-
-
-
-```
-
 4. npm i lucide-react
 5. npm install --save-exact react@rc react-dom@rc
-6. A partir do React 19, a tag <form> utiliza o "action" ao invés do onSubmit
+6. As of React 19, tag <form> uses event "action" instead of onSubmit
 7. npm install sonner
+8. npm i @tanstack/react-query -f

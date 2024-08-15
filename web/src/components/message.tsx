@@ -24,7 +24,7 @@ export function Message({messageId, text, amountOfReactions, answered = false} :
             await reactToMessage({ roomId, messageId });
             setHasReacted(true);
         } catch {
-            toast.error("Erro ao reagir à mensagem");
+            toast.error("Failed to react");
         }
     }
 
@@ -36,7 +36,7 @@ export function Message({messageId, text, amountOfReactions, answered = false} :
             await removeReactToMessage({ roomId, messageId });
             setHasReacted(false);
         } catch {
-            toast.error("Erro ao reagir à mensagem");
+            toast.error("Failed to react");
         }
     }
 
@@ -50,7 +50,7 @@ export function Message({messageId, text, amountOfReactions, answered = false} :
                     onClick={handleRemoveReact}
                     className="mt-3 flex items-center gap-2 text-orange-400 text-sm font-medium hover:text-orange-500" type="button">
                     <ArrowUp className="size-4"></ArrowUp>
-                    Curtir pergunta ({amountOfReactions})
+                    Upvote question ({amountOfReactions})
                 </button>
             ) : (
                 <button
@@ -58,7 +58,7 @@ export function Message({messageId, text, amountOfReactions, answered = false} :
                     className="mt-3 flex items-center gap-2 text-zinc-400 text-sm font-medium hover:text-zinc-300"
                     type="button">
                     <ArrowUp className="size-4"></ArrowUp>
-                    Curtir pergunta ({amountOfReactions})
+                    Upvote question ({amountOfReactions})
                 </button>
             )}
         </li>
