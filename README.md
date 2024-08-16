@@ -4,9 +4,9 @@
 
 ---
 
-The AMA application allows creating a room to be shared in which others can submit answers and upvote them.
+The AMA application enables users to create a room where others can submit answers and upvote them.
 
-[Demo]
+![Demo](/demo.gif)
 
 To run locally, follow these commands:
 
@@ -21,9 +21,9 @@ Start the web:
 1. Inside the web directory, run `npm run dev`
 2. Open http://localhost:5173/
 
-## Other command performed while coding the app
+### Other commands performed while coding the app
 
-### Server
+#### Server
 1. go mod init github.com/bruneltz/react-go 
 2. After finishing configuring the compose.yml: docker compose up
 3. Handle migrations: go install github.com/jackc/tern/v2@latest
@@ -38,7 +38,7 @@ Start the web:
 12. Run every command with the directive "generate": go generate ./...
 13. go get github.com/go-chi/cors
 
-### Web
+#### Web
 1. npm create vite@latest
 2. npm i 
 3. npm i react-router-dom
